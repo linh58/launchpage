@@ -1,0 +1,155 @@
+* {
+    box-sizing: inherit;
+}
+
+:root {
+    --white-color: #fff;
+    --primary-color: #e52f37;
+    --header-height: 93px;
+    --gray-background: #F1FAFF;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    line-height: 20px;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.7rem;
+    color: #7c8595;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #071e55; 
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 2rem;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.register-general {
+    width: 100%;
+    height: 52px;
+    padding-left: 11%;
+    padding-right: 5%;
+    color: #555;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 15px;
+}
+
+.register-general:focus {
+    outline: 1px solid #333;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.section-title,
+.section-subtitle {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.8rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    margin-bottom: 50px;
+    font-size: 1.8rem;
+}
+
+.general-padding {
+    padding: 90px 0 100px 0;
+}
+
+.section-background {
+    background: url(../img/background-overlay/background.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed;
+    color: var(--white-color);
+}
+
+.background-overlay {
+    width: 100%;
+    position: absolute;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.95;
+}
+
+.button {
+    display: inline-block;
+    font-size: 1.6rem;
+    color: var(--white-color);
+    line-height: 22px;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    letter-spacing: 1px;
+    border-radius: 23px;
+    padding: 14px 20px;
+    border: 1px solid var(--primary-color);
+    transition: 0.4s;
+}
+
+.bounce-in {
+    animation: bounceIn ease-in-out 0.5s;
+}
+
+/* keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% { 
+        transform: scale(.3);
+    }
+    50% { 
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,239 @@
+/* Tablet and Mobile */
+@media (max-width: 1023px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .header__navbar-icon {
+        display: block;
+    }
+
+    .header__navbar-list {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: var(--white-color);
+        margin: 0;
+        width: 260px;   
+        padding: 24px 10px;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    .header__navbar-active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        z-index: 100;
+        display: none;
+    }
+
+    .overlay-block {
+        display: block;
+    }
+
+    .header__navbar-item {
+        display: block;
+    }
+
+    .navbar-element {
+        display: block;
+    }
+
+    .header__navbar-link {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .home__heading {
+        font-size: 3.4rem;
+    }
+
+    .register__name,
+    .register__email,
+    .register__select {
+        background-size: 16px;
+        background-position: 7px 16px;
+    }
+
+    .discover__image-block {
+        padding-right: 0;
+    }
+
+    .footer__social {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+/* Tablet pro */
+@media (min-width: 1024px) and (max-width: 1250px) {
+    .header__navbar-list {
+        padding-left: 0;
+    }
+
+    .feature-box-text {
+        width: 70%;
+    }
+
+    .slide__content-icon {
+        margin: 10px 15px 10px 0;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .register {
+        margin-left: 20px;
+        padding: 25px !important;
+    }
+
+    .home__block-text {
+        font-size: 1.8rem;
+    }
+
+    .about__block-item:nth-child(3),
+    .discover__item,
+    .slide-image {
+        margin-top: 20px;
+    }
+
+    .team__item {
+        margin: 15px 0;
+    }
+
+    .feature__block {
+        justify-content: center;
+    }
+
+    .feature-box {
+        margin-left: 20%;
+    }
+
+    .pricing__content {
+        justify-content: space-around;
+    }
+
+    .pricing__card {
+        margin: 0;
+    }
+
+    .query-container {
+        padding: 0 15px;
+    }
+
+    .footer__copyright {
+        margin-left: 20%;
+        margin-bottom: 20px;
+    }
+    
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .m-margin-15 {
+        margin: 0 15px;
+    }
+
+    .register {
+        margin-top: 40px;
+        padding: 25px !important;
+    }
+
+    .about__block-item,
+    .facts-text,
+    .team__subtitle, 
+    .pricing__card-white {
+        margin-bottom: 20px;
+    }
+
+    .discover-img {
+        margin-bottom: 50px;
+    }
+
+    .slide__content {
+        padding-right: 0;
+    }
+
+    .agency__title,
+    .slide__content-item {
+        margin-bottom: 40px;
+    }
+
+    .tester-name span {
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    .team__item {
+        margin: 15px;
+    }
+    
+    .feature-box {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .feature-box-text,
+    .feature-box i {
+        float: unset;
+    }
+
+    .feature-box-text {
+        width: unset;
+        margin-left: 0;
+    }
+
+    .feature-box i {
+        margin-bottom: 25px;
+    }
+
+    .pricing__card {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .footer__copyright {
+        margin: 0 15px 20px;
+        text-align: center;
+    }
+
+    .footer__copyright p {
+        line-height: 1.2;
+    }
+
+    .contact__subtitle  {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .partner__content {
+        margin: 0 15px;
+    }
+
+    .partner__title {
+        margin-bottom: 0;
+    }
+
+    .slide__content-icon {
+        float: unset;
+        margin-left: 35%;
+    }
+
+    .slide__content-block {
+        text-align: center;
+    }
+}
