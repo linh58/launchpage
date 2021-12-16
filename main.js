@@ -6,6 +6,7 @@ function start() {
     handleClickEvents()
     handleDelayEvents()
     navbarHandle()
+    modalHandle()
 }
 
 start()
@@ -63,7 +64,7 @@ function navbarHandle() {
     var main = $('.main')
     var navbar = $('.header__navbar-list')
     var navbarIcon = $('.header__navbar-icon')
-    var overlay = $('.overlay')
+    var overlay = $('.navbar__overlay')
 
     function hideNavbar() {
         navbar.classList.remove('header__navbar-active')
@@ -126,6 +127,39 @@ function handleDelayEvents() {
 // }
 
 // test()
+
+function modalHandle() {
+    var main = $('.main')
+    var workCardImgs = $$('.work__card-img')
+    var workCards = $$('.card-wrap')
+    var modal = $('.modal')
+    var modalImg = $('.modal-content')
+    var modalContents = $$('.modal-content')
+    var closeBtn = $('.close-btn')
+
+    workCards.forEach((workCard, index) => {
+        var workCardImg = workCardImgs[index]
+        workCard.onclick = (e) => {
+            modal.style.display = 'block'
+            modalImg.src = workCardImg.src
+            e.stopPropagation()
+        }
+    })
+
+    main.onclick = function() {
+        modal.style.display = 'none'
+    }
+
+    modalContents.forEach((modalContent) => {
+        modalContent.onclick = (e) => {
+            e.stopPropagation()
+        }
+    })
+
+    closeBtn.onclick = function() {
+        modal.style.display = 'none'
+    }
+}
 
 
 
