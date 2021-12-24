@@ -1,36 +1,36 @@
-var $ = document.querySelector.bind(document)
-var $$ = document.querySelectorAll.bind(document)
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
 
 function start() {
-    navbarScroll()
+    navbarSticky()
     handleClickEvents()
     handleDelayEvents()
-    navbarHandle()
+    navbarOnMobile()
     modalHandle()
+    scrollBarActive()
 }
 
 start()
 
 //functions 
-function navbarScroll() {
-    window.addEventListener('scroll', function () {
-        var header = $('header');
-        var homeSection = $('#home').clientHeight
+function navbarSticky() {
+    window.addEventListener('scroll', () => {
+        const header = $('header');
+        const homeSection = $('#home').clientHeight
         header.classList.toggle('sticky', window.scrollY > homeSection - 200);
     });
 }
 
 function handleClickEvents() {
-    var contentBlocks = $$('.slide__content-item')
-    var cardHeaders = $$('.card-header')
-    var cardBodys = $$('.card-body')
-    var navbarElements = $$('.navbar-element')
+    const contentBlocks = $$('.slide__content-item')
+    const cardHeaders = $$('.card-header')
+    const cardBodys = $$('.card-body')
 
     //Click event in slide section
     contentBlocks.forEach((contentBlock, index) => {
-        var slideImages = $$('.slide-img')
+        const slideImages = $$('.slide-img')
         contentBlock.onclick = function() {
-            var slideImage = slideImages[index]
+            const slideImage = slideImages[index]
     
             $('.slide__content-item.slide__content-active').classList.remove('slide__content-active')
             $('.slide-img.img-active').classList.remove('img-active')
@@ -42,29 +42,20 @@ function handleClickEvents() {
 
     //Click event in feedback section
     cardHeaders.forEach((cardHeader, index) => {
-        var cardBody = cardBodys[index]
+        const cardBody = cardBodys[index]
         cardHeader.onclick = function() {
             $('.card-body.card-body-active').classList.remove('card-body-active')
             
             cardBody.classList.toggle('card-body-active')
         }
     })
-
-    //Navigation bar click 
-    navbarElements.forEach((navbarElement) => {
-        navbarElement.onclick = function() {
-            $('.navbar-element.navbar-active').classList.remove('navbar-active')
-            this.classList.add('navbar-active')
-        }
-    })
-
 }
 
-function navbarHandle() {
-    var main = $('.main')
-    var navbar = $('.header__navbar-list')
-    var navbarIcon = $('.header__navbar-icon')
-    var overlay = $('.navbar__overlay')
+function navbarOnMobile() {
+    const main = $('.main')
+    const navbar = $('.header__navbar-list')
+    const navbarIcon = $('.header__navbar-icon')
+    const overlay = $('.navbar__overlay')
 
     function hideNavbar() {
         navbar.classList.remove('header__navbar-active')
@@ -87,9 +78,9 @@ function navbarHandle() {
 }
 
 function handleDelayEvents() {
-    var registerForm = $('.register')
-    var discoverImage = $('.discover-img')
-    var contactForm = $('.contact__form-container')
+    const registerForm = $('.register')
+    const discoverImage = $('.discover-img')
+    const contactForm = $('.contact__form-container')
 
     //Register
     setTimeout(() => {
@@ -111,34 +102,39 @@ function handleDelayEvents() {
 }
 
 
-// function test() {
-//     var homeSection = $('#home')
-//     var totalHome = homeSection.offsetHeight
-//     var partnerSection = $('.partner__section')
-//     var aboutSection = $('#about')
-//     var totalAbout = aboutSection.offsetTop + aboutSection.offsetHeight
+function scrollBarActive() {
+    const sections = $$('section')   
+    const navItems = $$('.navbar-element')
+    window.addEventListener('scroll', () => {
+        let current = ''
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop
+            const sectionHeight = section.clientHeight
+            if(scrollY >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id')
+            }
+        })
+        navItems.forEach(navItem => {
+            navItem.classList.remove('navbar-active')
+            if(navItem.classList.contains(current)) {
+                navItem.classList.add('navbar-active')
+            }
+        }) 
+    })
+}
 
-//     window.onscroll = function() {
-//         if(window.scrollY > totalHome) {
-//             console.log('It is end home section')
-//         }
-//     }
-
-// }
-
-// test()
 
 function modalHandle() {
-    var main = $('.main')
-    var workCardImgs = $$('.work__card-img')
-    var workCards = $$('.card-wrap')
-    var modal = $('.modal')
-    var modalImg = $('.modal-content')
-    var modalContents = $$('.modal-content')
-    var closeBtn = $('.close-btn')
+    const main = $('.main')
+    const workCardImgs = $$('.work__card-img')
+    const workCards = $$('.card-wrap')
+    const modal = $('.modal')
+    const modalImg = $('.modal-content')
+    const modalContents = $$('.modal-content')
+    const closeBtn = $('.close-btn')
 
     workCards.forEach((workCard, index) => {
-        var workCardImg = workCardImgs[index]
+        const workCardImg = workCardImgs[index]
         workCard.onclick = (e) => {
             modal.style.display = 'block'
             modalImg.src = workCardImg.src
@@ -146,7 +142,7 @@ function modalHandle() {
         }
     })
 
-    main.onclick = function() {
+    main.onclick = () => {
         modal.style.display = 'none'
     }
 
@@ -156,7 +152,7 @@ function modalHandle() {
         }
     })
 
-    closeBtn.onclick = function() {
+    closeBtn.onclick = () => {
         modal.style.display = 'none'
     }
 }
