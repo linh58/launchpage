@@ -343,9 +343,6 @@
     width: 100%;
     border-radius: 8px;
     box-shadow: 10px 12px 40px rgb(0 0 0 / 20%);
-    transform: translateX(-130%);
-    opacity: 0;
-    transition: 0.5s;
 }
 
 .discover__item-title {
@@ -614,6 +611,10 @@
     background-color: var(--white-color);
 }
 
+.work__card {
+    opacity: 1;
+}
+
 .work__card-img {
     width: 100%;
     padding: 5px 5px;
@@ -827,6 +828,7 @@
 .feature-box {
     margin-top: 40px;
 }
+
 .feature-box i {
     font-size: 5rem;
     width: 55px;
@@ -1015,12 +1017,12 @@
     color: var(--white-color);
 }
 
-.contact__form-container {
-    opacity: 0;
-}
-
 .contact__form {
     justify-content: center;
+}
+
+.contact__form-container {
+    opacity: 0;
 }
 
 .contact__form-wrap input,

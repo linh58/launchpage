@@ -79,26 +79,40 @@ function navbarOnMobile() {
 
 function handleDelayEvents() {
     const registerForm = $('.register')
-    const discoverImage = $('.discover-img')
     const contactForm = $('.contact__form-container')
 
-    //Register
+    ScrollReveal().reveal('.discover-img', {
+        distance: '150%',
+        origin: 'left',
+        opacity: null,
+        delay: 600,
+        duration: 1000,
+    });
+
+    const sr = ScrollReveal({
+        distance: '0px',
+        opacity: 0,
+        delay: 600,
+        duration: 600,
+    })
+
+    sr.reveal('.work__card', '.feature-container-1')
+    sr.reveal('.feature-container-2', { delay: 800})
+    sr.reveal('.feature-container-3', { delay: 1000})
+    sr.reveal('.feature-container-4', { delay: 1200})
+    sr.reveal('.feature-container-5', { delay: 1400})
+    sr.reveal('.feature-container-6', { delay: 1600})
+
     setTimeout(() => {
         registerForm.classList.add('bounce-in')
         registerForm.style.opacity = 1
     }, 1000)
 
-    //Image in discover section
-    setTimeout(() => {
-        discoverImage.style.transform = 'translate(0)'
-        discoverImage.style.opacity = 1
-    }, 2000)
-
-    //
     setTimeout(() => {
         contactForm.classList.add('bounce-in')
         contactForm.style.opacity = 1
     }, 1000)
+
 }
 
 
